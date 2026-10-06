@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="edu.course.taskboard.EstimatePolicyTest" tests="8" failures="0" errors="0" skipped="0" time="0.038">
+  <testcase name="onePointTakesFifteenMinutes" classname="edu.course.taskboard.EstimatePolicyTest" time="0.017" />
+  <testcase name="zeroPointsAreRejected" classname="edu.course.taskboard.EstimatePolicyTest" time="0.003" />
+  <testcase name="elevenPointsAreRejectedWithMessage" classname="edu.course.taskboard.EstimatePolicyTest" time="0.001" />
+  <testcase name="ninePointsAreRejected" classname="edu.course.taskboard.EstimatePolicyTest" time="0.0" />
+  <testcase name="minusTwoPointsAreRejected" classname="edu.course.taskboard.EstimatePolicyTest" time="0.001" />
+  <testcase name="fourPointsTakeSixtyMinutes" classname="edu.course.taskboard.EstimatePolicyTest" time="0.001" />
+  <testcase name="twoPointsTakeThirtyMinutes" classname="edu.course.taskboard.EstimatePolicyTest" time="0.001" />
+  <testcase name="sevenPointsTakeOneHundredFiveMinutes" classname="edu.course.taskboard.EstimatePolicyTest" time="0.001" />
+</testsuite>

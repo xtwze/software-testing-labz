@@ -1,0 +1,35 @@
+[
+  {
+    "run": "run-success",
+    "tests": 8,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_methods": [],
+    "exit_code": 0,
+    "test_sha256": "4699563da2951860d3642c3e0bdb58396cb9637c31b4d78067457dbce896e0c9"
+  },
+  {
+    "run": "run-failed",
+    "tests": 8,
+    "failures": 2,
+    "errors": 0,
+    "skipped": 0,
+    "failed_methods": [
+      "elevenPointsAreRejectedWithMessage",
+      "ninePointsAreRejected"
+    ],
+    "exit_code": 1,
+    "test_sha256": "4699563da2951860d3642c3e0bdb58396cb9637c31b4d78067457dbce896e0c9"
+  },
+  {
+    "run": "run-restored",
+    "tests": 8,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_methods": [],
+    "exit_code": 0,
+    "test_sha256": "4699563da2951860d3642c3e0bdb58396cb9637c31b4d78067457dbce896e0c9"
+  }
+]

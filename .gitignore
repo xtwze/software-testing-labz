@@ -1,0 +1,8 @@
+**/target/
+**/.idea/
+**/*.iml
+.DS_Store
+**/.DS_Store
+evidence/
+tmp/
+01/run-*.log
