@@ -6,7 +6,8 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.junit.jupiter.params.provider.ValueSource;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class BikeRentalTest {
     private final BikeRental rental = new BikeRental();
@@ -15,60 +16,63 @@ class BikeRentalTest {
     @ParameterizedTest
     @CsvSource({"1, 120", "5, 600", "10, 1200"})
     void calculatesRentalCost(int hours, int expected) {
-        assertEquals(expected, rental.rentalCost(hours));
+        assertThat(rental.rentalCost(hours)).isEqualTo(expected);
     }
 
     @ParameterizedTest
     @ValueSource(ints = {-1, 0, 11})
     void rejectsInvalidHours(int hours) {
-        assertThrows(IllegalArgumentException.class, () -> rental.rentalCost(hours));
+        assertThatThrownBy(() -> rental.rentalCost(hours))
+                .isInstanceOf(IllegalArgumentException.class);
     }
 
     @ParameterizedTest
     @ValueSource(ints = {2, 10, 25})
     void acceptsNameWithinLengthLimits(int length) {
         String name = "а".repeat(length);
-        assertEquals(name, rental.registerName(name));
+        assertThat(rental.registerName(name)).isEqualTo(name);
     }
 
     @ParameterizedTest
     @NullAndEmptySource
     @ValueSource(strings = {"   ", "А", "abcdefghijklmnopqrstuvwxyz"})
     void rejectsInvalidName(String name) {
-        assertThrows(IllegalArgumentException.class, () -> rental.registerName(name));
+        assertThatThrownBy(() -> rental.registerName(name))
+                .isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
     void removesSpacesAroundName() {
-        assertEquals("Анна", rental.registerName("  Анна  "));
+        assertThat(rental.registerName("  Анна  ")).isEqualTo("Анна");
     }
 
     @Test
     void keepsSpacesInsideName() {
-        assertEquals("Анна  Мария", rental.registerName("  Анна  Мария  "));
+        assertThat(rental.registerName("  Анна  Мария  ")).isEqualTo("Анна  Мария");
     }
 
     @Test
     void checksLengthAfterRemovingSpaces() {
         // До удаления пробелов строка длиннее 25 символов.
         String name = "а".repeat(25);
-        assertEquals(name, rental.registerName("  " + name + "  "));
+        assertThat(rental.registerName("  " + name + "  ")).isEqualTo(name);
     }
 
     @Test
     void rejectsShortNameAfterRemovingSpaces() {
-        assertThrows(IllegalArgumentException.class, () -> rental.registerName(" А "));
+        assertThatThrownBy(() -> rental.registerName(" А "))
+                .isInstanceOf(IllegalArgumentException.class);
     }
 
     @ParameterizedTest
     @CsvSource({"-1, false", "0, false", "1, true"})
     void checksReturnTime(long seconds, boolean expected) {
-        assertEquals(expected, rental.isLate(dueAt, dueAt.plusSeconds(seconds)));
+        assertThat(rental.isLate(dueAt, dueAt.plusSeconds(seconds))).isEqualTo(expected);
     }
 
     @ParameterizedTest
     @CsvSource({"1, -1, 0", "1, 0, 0", "1, 1, 60", "5, 1, 300", "10, 1, 600"})
     void calculatesLateFee(int hours, long seconds, int expected) {
-        assertEquals(expected, rental.lateFee(hours, dueAt, dueAt.plusSeconds(seconds)));
+        assertThat(rental.lateFee(hours, dueAt, dueAt.plusSeconds(seconds))).isEqualTo(expected);
     }
 }

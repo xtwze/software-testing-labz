@@ -51,7 +51,7 @@ Windows:
 .\mvnw.cmd test
 ```
 
-В IntelliJ IDEA открой папку `02` как Maven-проект, дождись загрузки зависимостей и запусти `BikeRentalTest` кнопкой рядом с классом. В проекте используется JUnit; Maven Wrapper входит в комплект.
+В IntelliJ IDEA открой папку `02` как Maven-проект, дождись загрузки зависимостей и запусти `BikeRentalTest` кнопкой рядом с классом. JUnit запускает тесты, а AssertJ проверяет результаты через `assertThat(...).isEqualTo(...)` и исключения через `assertThatThrownBy(...).isInstanceOf(...)`; Maven Wrapper входит в комплект.
 
 ## Результат
 
