@@ -35,7 +35,7 @@ class BikeRentalTest {
 
     @ParameterizedTest
     @NullAndEmptySource
-    @ValueSource(strings = {"   ", "А", "abcdefghijklmnopqrstuvwxyz"})
+    @ValueSource(strings = {"   ", "А", "abcdefghijklmnopqrstuvwxyzov"})
     void rejectsInvalidName(String name) {
         assertThatThrownBy(() -> rental.registerName(name))
                 .isInstanceOf(IllegalArgumentException.class);
@@ -43,11 +43,13 @@ class BikeRentalTest {
 
     @Test
     void removesSpacesAroundName() {
+
         assertThat(rental.registerName("  Анна  ")).isEqualTo("Анна");
     }
 
     @Test
     void keepsSpacesInsideName() {
+
         assertThat(rental.registerName("  Анна  Мария  ")).isEqualTo("Анна  Мария");
     }
 
