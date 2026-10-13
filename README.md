@@ -83,3 +83,7 @@ sh ./mvnw "-Dtest=EstimatePolicyTest" test
 
 - [Практическая работа 01. Первый модульный тест](https://lms.ctutp.ru/lms/courses/d7jsglqb09/learn/1-1)
 - [Стартовый проект](https://cloud.mail.ru/public/cMdk/S87xYy5WG)
+
+## Практическая работа № 2
+
+[Вариант 2: прокат велосипедов](02/README.md). Проект, таблица тест-дизайна и порядок сдачи находятся в папке `02`.

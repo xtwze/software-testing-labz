@@ -1,0 +1,17 @@
+[
+  {
+    "mutation": "upper-hour-limit",
+    "tests": 26,
+    "failures": 1
+  },
+  {
+    "mutation": "equal-return-time",
+    "tests": 26,
+    "failures": 2
+  },
+  {
+    "mutation": "late-fee",
+    "tests": 26,
+    "failures": 3
+  }
+]
