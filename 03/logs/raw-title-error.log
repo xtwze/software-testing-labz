@@ -1,0 +1,163 @@
+[INFO] Scanning for projects...
+[INFO] Loaded 24153 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+[INFO]
+[INFO] ------------------------< edu.course:taskboard >------------------------
+[INFO] Building taskboard 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- clean:3.5.0:clean (default-clean) @ taskboard ---
+[INFO] Deleting <project>/target
+[INFO]
+[INFO] --- resources:3.5.0:resources (default-resources) @ taskboard ---
+[INFO] skip non existing resourceDirectory <project>/src/main/resources
+[INFO]
+[INFO] --- compiler:3.15.0:compile (default-compile) @ taskboard ---
+[INFO] Loaded 74 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 4 source files with javac [debug release 25] to target/classes
+[INFO]
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ taskboard ---
+[INFO] skip non existing resourceDirectory <project>/src/test/resources
+[INFO]
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ taskboard ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug release 25] to target/test-classes
+[INFO]
+[INFO] --- surefire:3.6.0:test (default-test) @ taskboard ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[INFO] Running edu.course.taskboard.TaskServiceTest
+[ERROR] Tests run: 9, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 5.737 s <<< FAILURE! -- in edu.course.taskboard.TaskServiceTest
+[ERROR] edu.course.taskboard.TaskServiceTest.rejectsNormalizedDuplicateForBob -- Time elapsed: 5.021 s <<< FAILURE!
+java.lang.AssertionError:
+
+Expecting actual throwable to be an instance of:
+  java.lang.IllegalStateException
+but was:
+  org.mockito.exceptions.misusing.PotentialStubbingProblem:
+Strict stubbing argument mismatch. Please check:
+ - this invocation of 'exists' method:
+    store.exists("bob", "  Review Android  ");
+    -> at edu.course.taskboard.TaskService.create(TaskService.java:20)
+ - has following stubbing(s) with different arguments:
+    1. store.exists("bob", "Review Android"); stubbed with: [Returns: true]
+      -> at edu.course.taskboard.TaskServiceTest.rejectsNormalizedDuplicateForBob(TaskServiceTest.java:96)
+Typically, stubbing argument mismatch indicates user mistake when writing tests.
+Mockito fails early so that you can debug potential problem easily.
+However, there are legit scenarios when this exception generates false negative signal:
+  - stubbing the same method multiple times using 'given().will()' or 'when().then()' API
+    Please use 'will().given()' or 'doReturn().when()' API for stubbing.
+  - stubbed method is intentionally invoked with different arguments by code under test
+    Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
+For more information see javadoc for PotentialStubbingProblem class.
+	at edu.course.taskboard.TaskService.create(TaskService.java:20)
+	at edu.course.taskboard.TaskServiceTest.lambda$rejectsNormalizedDuplicateForBob$0(TaskServiceTest.java:98)
+	at org.assertj.core.api.ThrowableAssert.catchThrowable(ThrowableAssert.java:66)
+	...(85 remaining lines not displayed - this can be changed with Assertions.setMaxStackTraceElementsDisplayed)
+	at edu.course.taskboard.TaskServiceTest.rejectsNormalizedDuplicateForBob(TaskServiceTest.java:99)
+
+[ERROR] edu.course.taskboard.TaskServiceTest.normalizedDuplicateDoesNotReachSave -- Time elapsed: 0.063 s <<< FAILURE!
+java.lang.AssertionError:
+
+Expecting actual throwable to be an instance of:
+  java.lang.IllegalStateException
+but was:
+  org.mockito.exceptions.misusing.PotentialStubbingProblem:
+Strict stubbing argument mismatch. Please check:
+ - this invocation of 'exists' method:
+    store.exists("alice", "  Read Java  ");
+    -> at edu.course.taskboard.TaskService.create(TaskService.java:20)
+ - has following stubbing(s) with different arguments:
+    1. store.exists("alice", "Read Java"); stubbed with: [Returns: true]
+      -> at edu.course.taskboard.TaskServiceTest.normalizedDuplicateDoesNotReachSave(TaskServiceTest.java:57)
+Typically, stubbing argument mismatch indicates user mistake when writing tests.
+Mockito fails early so that you can debug potential problem easily.
+However, there are legit scenarios when this exception generates false negative signal:
+  - stubbing the same method multiple times using 'given().will()' or 'when().then()' API
+    Please use 'will().given()' or 'doReturn().when()' API for stubbing.
+  - stubbed method is intentionally invoked with different arguments by code under test
+    Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
+For more information see javadoc for PotentialStubbingProblem class.
+	at edu.course.taskboard.TaskService.create(TaskService.java:20)
+	at edu.course.taskboard.TaskServiceTest.lambda$normalizedDuplicateDoesNotReachSave$0(TaskServiceTest.java:59)
+	at org.assertj.core.api.ThrowableAssert.catchThrowable(ThrowableAssert.java:66)
+	...(85 remaining lines not displayed - this can be changed with Assertions.setMaxStackTraceElementsDisplayed)
+	at edu.course.taskboard.TaskServiceTest.normalizedDuplicateDoesNotReachSave(TaskServiceTest.java:60)
+
+[INFO]
+[INFO] Results:
+[INFO]
+[ERROR] Failures:
+[ERROR]   TaskServiceTest.normalizedDuplicateDoesNotReachSave:60
+Expecting actual throwable to be an instance of:
+  java.lang.IllegalStateException
+but was:
+  org.mockito.exceptions.misusing.PotentialStubbingProblem:
+Strict stubbing argument mismatch. Please check:
+ - this invocation of 'exists' method:
+    store.exists("alice", "  Read Java  ");
+    -> at edu.course.taskboard.TaskService.create(TaskService.java:20)
+ - has following stubbing(s) with different arguments:
+    1. store.exists("alice", "Read Java"); stubbed with: [Returns: true]
+      -> at edu.course.taskboard.TaskServiceTest.normalizedDuplicateDoesNotReachSave(TaskServiceTest.java:57)
+Typically, stubbing argument mismatch indicates user mistake when writing tests.
+Mockito fails early so that you can debug potential problem easily.
+However, there are legit scenarios when this exception generates false negative signal:
+  - stubbing the same method multiple times using 'given().will()' or 'when().then()' API
+    Please use 'will().given()' or 'doReturn().when()' API for stubbing.
+  - stubbed method is intentionally invoked with different arguments by code under test
+    Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
+For more information see javadoc for PotentialStubbingProblem class.
+	at edu.course.taskboard.TaskService.create(TaskService.java:20)
+	at edu.course.taskboard.TaskServiceTest.lambda$normalizedDuplicateDoesNotReachSave$0(TaskServiceTest.java:59)
+	at org.assertj.core.api.ThrowableAssert.catchThrowable(ThrowableAssert.java:66)
+	...(85 remaining lines not displayed - this can be changed with Assertions.setMaxStackTraceElementsDisplayed)
+[ERROR]   TaskServiceTest.rejectsNormalizedDuplicateForBob:99
+Expecting actual throwable to be an instance of:
+  java.lang.IllegalStateException
+but was:
+  org.mockito.exceptions.misusing.PotentialStubbingProblem:
+Strict stubbing argument mismatch. Please check:
+ - this invocation of 'exists' method:
+    store.exists("bob", "  Review Android  ");
+    -> at edu.course.taskboard.TaskService.create(TaskService.java:20)
+ - has following stubbing(s) with different arguments:
+    1. store.exists("bob", "Review Android"); stubbed with: [Returns: true]
+      -> at edu.course.taskboard.TaskServiceTest.rejectsNormalizedDuplicateForBob(TaskServiceTest.java:96)
+Typically, stubbing argument mismatch indicates user mistake when writing tests.
+Mockito fails early so that you can debug potential problem easily.
+However, there are legit scenarios when this exception generates false negative signal:
+  - stubbing the same method multiple times using 'given().will()' or 'when().then()' API
+    Please use 'will().given()' or 'doReturn().when()' API for stubbing.
+  - stubbed method is intentionally invoked with different arguments by code under test
+    Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
+For more information see javadoc for PotentialStubbingProblem class.
+	at edu.course.taskboard.TaskService.create(TaskService.java:20)
+	at edu.course.taskboard.TaskServiceTest.lambda$rejectsNormalizedDuplicateForBob$0(TaskServiceTest.java:98)
+	at org.assertj.core.api.ThrowableAssert.catchThrowable(ThrowableAssert.java:66)
+	...(85 remaining lines not displayed - this can be changed with Assertions.setMaxStackTraceElementsDisplayed)
+[INFO]
+[ERROR] Tests run: 9, Failures: 2, Errors: 0, Skipped: 0
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[ERROR] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  30.216 s
+[INFO] Finished at: 2026-10-20T17:19:22+03:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.6.0:test (default-test) on project taskboard: There are test failures.
+[ERROR]
+[ERROR] See <project>/target/surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

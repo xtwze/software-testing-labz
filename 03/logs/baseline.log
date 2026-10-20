@@ -1,0 +1,45 @@
+[INFO] Scanning for projects...
+[INFO] Loaded 24153 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+[INFO]
+[INFO] ------------------------< edu.course:taskboard >------------------------
+[INFO] Building taskboard 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- clean:3.5.0:clean (default-clean) @ taskboard ---
+[INFO]
+[INFO] --- resources:3.5.0:resources (default-resources) @ taskboard ---
+[INFO] skip non existing resourceDirectory <project>/src/main/resources
+[INFO]
+[INFO] --- compiler:3.15.0:compile (default-compile) @ taskboard ---
+[INFO] Loaded 74 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 4 source files with javac [debug release 25] to target/classes
+[INFO]
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ taskboard ---
+[INFO] skip non existing resourceDirectory <project>/src/test/resources
+[INFO]
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ taskboard ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug release 25] to target/test-classes
+[INFO]
+[INFO] --- surefire:3.6.0:test (default-test) @ taskboard ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[INFO] Running edu.course.taskboard.TaskServiceTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.927 s -- in edu.course.taskboard.TaskServiceTest
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  29.971 s
+[INFO] Finished at: 2026-10-20T17:18:03+03:00
+[INFO] ------------------------------------------------------------------------

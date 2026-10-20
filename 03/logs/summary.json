@@ -1,0 +1,45 @@
+{
+  "runs": [
+    {
+      "run": "baseline",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0
+    },
+    {
+      "run": "success",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0
+    },
+    {
+      "run": "raw-title-error",
+      "tests": 9,
+      "failures": 2,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 1
+    },
+    {
+      "run": "system-clock-error",
+      "tests": 9,
+      "failures": 3,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 1
+    },
+    {
+      "run": "restored",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0
+    }
+  ],
+  "test_sha256": "572c53aea13dd7dfb7cf2cbb0fbb592b2faa887fba99c8776c1fb4b9c40e9dfb"
+}
